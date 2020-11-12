@@ -9,11 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, Friend!")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        Conn4Board()
+            .stroke()
     }
 }
 
+struct Conn4Board: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        
+        path.addArc(center: CGPoint(x: 50, y: 50), radius: 50, startAngle: .radians(0), endAngle: .radians(2 * Double.pi), clockwise: false)
+        
+        return path
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
