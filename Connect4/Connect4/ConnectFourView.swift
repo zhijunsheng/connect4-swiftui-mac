@@ -32,8 +32,19 @@ struct ConnectFourView: View {
                     }
                 }
             }
-            Button("Reset") {
-                connectFourViewModel.reset()
+            
+            HStack {
+                Button("Reset") {
+                    connectFourViewModel.reset()
+                }
+                
+                Button("Advertise") {
+                    connectFourViewModel.advertise()
+                }
+                
+                Button("Invite") {
+                    connectFourViewModel.invite()
+                }
             }
         }
         .padding()

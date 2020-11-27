@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
         let connectFourViewModel = ConnectFourViewModel()
-        let contentView = ConnectFourView(connectFourViewModel: connectFourViewModel)
+        let contentView = ConnectFourView(connectFourViewModel: connectFourViewModel).frame(minWidth: 450, minHeight: 450)
 
         // Create the window and set the content view.
         window = NSWindow(
@@ -28,13 +28,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.center()
         window.setFrameAutosaveName("Main Window")
         window.contentView = NSHostingView(rootView: contentView)
+        window.contentViewController = NSHostingController(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
-
 }
-
