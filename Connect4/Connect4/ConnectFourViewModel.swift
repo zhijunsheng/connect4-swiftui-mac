@@ -9,4 +9,8 @@ import Foundation
 
 class ConnectFourViewModel: ObservableObject {
     @Published private var connectFour: ConnectFour = ConnectFour()
+    
+    func pieceAt(col: Int, row: Int) -> ConnectFour.Piece? {
+        connectFour.pieceAt(col: col, row: row)
+    }
 }
