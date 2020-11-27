@@ -6,9 +6,12 @@
 //
 
 import Foundation
+import AVFoundation
 
 class ConnectFourViewModel: ObservableObject {
     @Published private var connectFour: ConnectFour = ConnectFour()
+    
+    private var droppingAudioPlayer: AVPlayer?
     
     func pieceAt(col: Int, row: Int) -> ConnectFour.Piece? {
         connectFour.pieceAt(col: col, row: row)
@@ -16,6 +19,9 @@ class ConnectFourViewModel: ObservableObject {
     
     func drop(at col: Int) {
         connectFour.drop(at: col)
+        
+        droppingAudioPlayer = AVPlayer(url: URL(fileReferenceLiteralResourceName: "drop.wav"))
+        droppingAudioPlayer?.play()
     }
     
     func reset() {

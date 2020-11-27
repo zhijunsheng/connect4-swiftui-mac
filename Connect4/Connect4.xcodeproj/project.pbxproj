@@ -10,6 +10,7 @@
 		07208A6725709947009B7C35 /* ConnectFourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07208A6625709947009B7C35 /* ConnectFourView.swift */; };
 		07208A6F25709A85009B7C35 /* ConnectFourViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07208A6E25709A85009B7C35 /* ConnectFourViewModel.swift */; };
 		07208A7425709AC9009B7C35 /* ConnectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07208A7325709AC9009B7C35 /* ConnectFour.swift */; };
+		07208A7C2570B78F009B7C35 /* drop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 07208A7B2570B78F009B7C35 /* drop.wav */; };
 		072AAD12255CD76E00FBD99C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072AAD11255CD76E00FBD99C /* AppDelegate.swift */; };
 		072AAD14255CD76E00FBD99C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072AAD13255CD76E00FBD99C /* ContentView.swift */; };
 		072AAD16255CD76F00FBD99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072AAD15255CD76F00FBD99C /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		07208A6625709947009B7C35 /* ConnectFourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourView.swift; sourceTree = "<group>"; };
 		07208A6E25709A85009B7C35 /* ConnectFourViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourViewModel.swift; sourceTree = "<group>"; };
 		07208A7325709AC9009B7C35 /* ConnectFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFour.swift; sourceTree = "<group>"; };
+		07208A7B2570B78F009B7C35 /* drop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drop.wav; sourceTree = "<group>"; };
 		072AAD0E255CD76E00FBD99C /* Connect4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connect4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		072AAD11255CD76E00FBD99C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		072AAD13255CD76E00FBD99C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				07208A6E25709A85009B7C35 /* ConnectFourViewModel.swift */,
 				072AAD13255CD76E00FBD99C /* ContentView.swift */,
 				072AAD15255CD76F00FBD99C /* Assets.xcassets */,
+				07208A7B2570B78F009B7C35 /* drop.wav */,
 				072AAD1A255CD76F00FBD99C /* Main.storyboard */,
 				072AAD1D255CD76F00FBD99C /* Info.plist */,
 				072AAD1E255CD76F00FBD99C /* Connect4.entitlements */,
@@ -248,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				072AAD1C255CD76F00FBD99C /* Main.storyboard in Resources */,
+				07208A7C2570B78F009B7C35 /* drop.wav in Resources */,
 				072AAD19255CD76F00FBD99C /* Preview Assets.xcassets in Resources */,
 				072AAD16255CD76F00FBD99C /* Assets.xcassets in Resources */,
 			);
