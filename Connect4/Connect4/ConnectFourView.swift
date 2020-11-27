@@ -11,24 +11,29 @@ struct ConnectFourView: View {
     @ObservedObject var connectFourViewModel: ConnectFourViewModel
     
     var body: some View {
-        HStack {
-            ForEach (0..<7) { col in
-                VStack {
-                    ForEach (0..<6) { i in
-                        ZStack {
-                            if let piece = connectFourViewModel.pieceAt(col: col, row: 5 - i) {
+        VStack {
+            HStack {
+                ForEach (0..<7) { col in
+                    VStack {
+                        ForEach (0..<6) { i in
+                            ZStack {
+                                if let piece = connectFourViewModel.pieceAt(col: col, row: 5 - i) {
+                                    Circle()
+                                        .fill(piece.player.isRed ? Color.red : .yellow)
+                                }
                                 Circle()
-                                    .fill(piece.player.isRed ? Color.red : .yellow)
+                                    .stroke(lineWidth: 2)
                             }
-                            Circle()
-                                .stroke(lineWidth: 2)
                         }
                     }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        connectFourViewModel.drop(at: col)
+                    }
                 }
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    connectFourViewModel.drop(at: col)
-                }
+            }
+            Button("Reset") {
+                connectFourViewModel.reset()
             }
         }
         .padding()

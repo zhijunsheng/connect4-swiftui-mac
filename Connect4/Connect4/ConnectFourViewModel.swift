@@ -17,4 +17,8 @@ class ConnectFourViewModel: ObservableObject {
     func drop(at col: Int) {
         connectFour.drop(at: col)
     }
+    
+    func reset() {
+        connectFour.reset()
+    }
 }

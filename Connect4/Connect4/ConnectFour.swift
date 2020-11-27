@@ -28,6 +28,11 @@ struct ConnectFour {
         whoseTurn = whoseTurn == .red ? .yellow : .red
     }
     
+    mutating func reset() {
+        piecesBox.removeAll()
+        whoseTurn = .red
+    }
+    
     enum Player {
         case red
         case yellow
