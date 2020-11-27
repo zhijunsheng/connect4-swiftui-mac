@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ConnectFourView: View {
+    @ObservedObject var connectFourViewModel: ConnectFourViewModel
+    
     var body: some View {
         HStack {
             ForEach (0..<7) { _ in
@@ -25,6 +27,6 @@ struct ConnectFourView: View {
 
 struct ConnectFourView_Previews: PreviewProvider {
     static var previews: some View {
-        ConnectFourView()
+        ConnectFourView(connectFourViewModel: ConnectFourViewModel())
     }
 }
