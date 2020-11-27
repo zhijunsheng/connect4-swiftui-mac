@@ -13,4 +13,8 @@ class ConnectFourViewModel: ObservableObject {
     func pieceAt(col: Int, row: Int) -> ConnectFour.Piece? {
         connectFour.pieceAt(col: col, row: row)
     }
+    
+    func drop(at col: Int) {
+        connectFour.drop(at: col)
+    }
 }

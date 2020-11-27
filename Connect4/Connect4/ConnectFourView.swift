@@ -25,6 +25,10 @@ struct ConnectFourView: View {
                         }
                     }
                 }
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    connectFourViewModel.drop(at: col)
+                }
             }
         }
         .padding()

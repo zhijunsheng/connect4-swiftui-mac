@@ -8,10 +8,9 @@
 import Foundation
 
 struct ConnectFour {
-    private var piecesBox: Set<Piece> = [
-        Piece(col: 0, row: 0, player: .yellow),
-        Piece(col: 0, row: 1, player: .red)
-    ]
+    private var piecesBox: Set<Piece> = []
+    
+    private var whoseTurn: Player = .red
     
     func pieceAt(col: Int, row: Int) -> Piece? {
         for piece in piecesBox {
@@ -20,6 +19,12 @@ struct ConnectFour {
             }
         }
         return nil
+    }
+    
+    mutating func drop(at col: Int) {
+        piecesBox.insert(Piece(col: col, row: 0, player: whoseTurn))
+        
+        whoseTurn = whoseTurn == .red ? .yellow : .red
     }
     
     enum Player {
