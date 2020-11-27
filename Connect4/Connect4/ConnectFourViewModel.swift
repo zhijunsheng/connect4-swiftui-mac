@@ -30,7 +30,16 @@ class ConnectFourViewModel: NSObject, ObservableObject {
         connectFour.pieceAt(col: col, row: row)
     }
     
-    func drop(at col: Int) {
+    func dropAndSend(at col: Int) {
+        dropWithSound(at: col)
+        
+        let colStr = "\(col)"
+        if let colData = colStr.data(using: .utf8) {
+            try? session.send(colData, toPeers: session.connectedPeers, with: .reliable)
+        }
+    }
+    
+    func dropWithSound(at col: Int) {
         connectFour.drop(at: col)
         
         droppingAudioPlayer = AVPlayer(url: URL(fileReferenceLiteralResourceName: "drop.wav"))
@@ -60,7 +69,11 @@ extension ConnectFourViewModel: MCSessionDelegate {
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        
+        if let colStr = String(data: data, encoding: .utf8), let col = Int(colStr) {
+            DispatchQueue.main.async {
+                self.dropWithSound(at: col)
+            }
+        }
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
