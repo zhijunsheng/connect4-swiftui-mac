@@ -22,7 +22,8 @@ struct ConnectFour {
     }
     
     mutating func drop(at col: Int) {
-        piecesBox.insert(Piece(col: col, row: 0, player: whoseTurn))
+        let numberPiecesAtCol = piecesBox.filter() { $0.col == col }.count
+        piecesBox.insert(Piece(col: col, row: numberPiecesAtCol, player: whoseTurn))
         
         whoseTurn = whoseTurn == .red ? .yellow : .red
     }
